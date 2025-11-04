@@ -1,0 +1,96 @@
+---
+---
+<header class="bg-blue-800 text-white shadow-md">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    
+    <a href="/" class="flex items-center space-x-3">
+      <img src="/logo/logo-municipalidad-de-chonchi.png" alt="Logo Municipalidad de Chonchi" class="h-12 w-49 object-contain" />
+      <span class="text-xl font-bold"></span>
+    </a>
+
+    <nav>
+      <ul class="hidden md:flex space-x-6 items-center font-medium">
+        <li><a href="/" class="hover:text-yellow-300">Inicio</a></li>
+
+        <li class="relative">
+          <button id="municipio-btn" class="hover:text-yellow-300 focus:outline-none flex items-center">
+            Municipio
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <ul id="municipio-menu" class="absolute hidden bg-white text-blue-900 mt-2 rounded shadow-lg w-56 z-50">
+            <li><a href="/municipio/alcalde" class="block px-4 py-2 hover:bg-gray-100">Alcalde</a></li>
+            <li><a href="/municipio/concejales" class="block px-4 py-2 hover:bg-gray-100">Concejales</a></li>
+            <li><a href="/municipio/concejo-municipal" class="block px-4 py-2 hover:bg-gray-100">Concejo Municipal</a></li>
+            <li><a href="/municipio/direcciones-municipales" class="block px-4 py-2 hover:bg-gray-100">Direcciones Municipales</a></li>
+            <li><a href="/municipio/corporacion" class="block px-4 py-2 hover:bg-gray-100">Corporacion Municipal de Chonchi</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/noticiasweb" class="hover:text-yellow-300">Noticias</a></li>
+        <li><a href="/multimedia" class="hover:text-yellow-300">Multimedia</a></li>
+        <li><a href="/identificacion/intranet" class="hover:text-yellow-300">Intranet</a></li>
+        <li><a href="/contacto" class="hover:text-yellow-300">Contacto</a></li>
+      </ul>
+
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <ul id="mobile-menu" class="md:hidden hidden bg-blue-700 text-white p-4 space-y-2 font-medium">
+    <li><a href="/" class="block hover:text-yellow-300">Inicio</a></li>
+
+    <li>
+      <details class="group">
+        <summary class="cursor-pointer hover:text-yellow-300">Municipio</summary>
+        <ul class="ml-4 mt-2 space-y-1 text-sm">
+          <li><a href="/municipio/alcalde" class="block hover:text-yellow-300">Alcalde</a></li>
+          <li><a href="/municipio/concejales" class="block hover:text-yellow-300">Concejales</a></li>
+          <li><a href="/municipio/concejo-municipal" class="block hover:text-yellow-300">Concejo Municipal</a></li>
+          <li><a href="/municipio/direcciones-municipales" class="block hover:text-yellow-300">Direcciones Municipales</a></li>
+          <li><a href="/municipio/corporacion" class="block hover:text-yellow-300">Corporacion Municipal</a></li>
+        </ul>
+      </details>
+    </li>
+
+    <li><a href="/noticiasweb" class="block hover:text-yellow-300">Noticias</a></li>
+    <li><a href="/multimedia" class="block hover:text-yellow-300">Multimedia</a></li>
+    <li><a href="/intranet" class="block hover:text-yellow-300">Intranet</a></li>
+    <li><a href="/contacto" class="block hover:text-yellow-300">Contacto</a></li>
+  </ul>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const municipioBtn = document.getElementById("municipio-btn");
+    const municipioMenu = document.getElementById("municipio-menu");
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+    }
+
+    if (municipioBtn && municipioMenu) {
+      municipioBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        municipioMenu.classList.toggle("hidden");
+      });
+
+      document.addEventListener("click", (e) => {
+        const target = e.target as Node | null;
+        if (target && !municipioBtn.contains(target) && !municipioMenu.contains(target)) {
+          municipioMenu.classList.add("hidden");
+        }
+      });
+    }
+  });
+</script>
+
+</header>

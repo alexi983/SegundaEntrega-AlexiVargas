@@ -1,0 +1,60 @@
+---
+---
+<section class="py-12 px-4 md:px-20 bg-[#1e3a5f] text-white relative overflow-hidden">
+  <h2 class="text-2xl md:text-4xl font-bold text-center mb-8">Noticias del Diario</h2>
+  <div class="relative">
+    <button id="prevDiario" class="absolute left-2 top-1/2 -translate-y-1/2 bg-white text-[#1e3a5f] p-2 rounded-full shadow-md hover:bg-gray-200 z-10">
+      &#8592;
+    </button>
+    <div id="diarioSlider" class="flex overflow-x-auto scroll-smooth space-x-4 no-scrollbar">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <img
+          src={`/diarios/diario${i + 1}.jpg`}
+          alt={`Diario ${i + 1}`}
+          class="flex-shrink-0 w-64 h-40 md:w-80 md:h-52 object-cover rounded-lg transition-transform duration-500 hover:scale-110 cursor-pointer"
+          data-index={i + 1}
+        />
+      ))}
+    </div>
+
+    <button id="nextDiario" class="absolute right-2 top-1/2 -translate-y-1/2 bg-white text-[#1e3a5f] p-2 rounded-full shadow-md hover:bg-gray-200 z-10">
+      &#8594;
+    </button>
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="/noticias/diarios" class="bg-white text-[#1e3a5f] px-6 py-2 rounded font-semibold hover:bg-gray-200">Mas noticias externas</a>
+  </div>
+
+  <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <img id="modalImage" src="" alt="Imagen ampliada" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg">
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const slider = document.getElementById("diarioSlider");
+    const prev = document.getElementById("prevDiario");
+    const next = document.getElementById("nextDiario");
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage") as HTMLImageElement;
+
+    if (!slider || !prev || !next || !modal || !modalImage) return;
+
+    next.addEventListener("click", () => {
+      slider.scrollBy({ left: 300, behavior: "smooth" });
+    });
+    prev.addEventListener("click", () => {
+      slider.scrollBy({ left: -300, behavior: "smooth" });
+    });
+
+    document.querySelectorAll("#diarioSlider img").forEach((img) => {
+      img.addEventListener("click", () => {
+        modalImage.src = (img as HTMLImageElement).src;
+        modal.classList.remove("hidden");
+      });
+    });
+
+    modal.addEventListener("click", () => modal.classList.add("hidden"));
+  });
+</script>
+</section>

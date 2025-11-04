@@ -1,0 +1,121 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Header />
+
+<section class="py-16 px-4 md:px-20 text-gray-800">
+  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center">
+      Servicios On Line &gt; Pago de Multas por Internet
+    </h1>
+    <p class="text-gray-700 mb-6 text-justify">
+      Usted podra ingresar su parte desde el mismo dia en que fue cursado y optar al 25% de descuento
+      por pagar dentro de los primeros 5 dias contados desde el dia de la infraccion (Art. 22 Ley 18.287).
+    </p>
+    <p class="text-gray-700 mb-6 text-justify">
+      Las opciones de pago son Web Pay (Visa, Magna, American Express, Diners Club), Banco de Chile,
+      SantanderSantiago y Banco Estado. Al finalizar la operacion usted debera imprimir la orden de ingreso municipal,
+      la que sera su comprobante de pago.
+    </p>
+    <p class="text-gray-700 mb-6">
+      <strong>NOTA:</strong> Los partes empadronados son los cursados directamente a los vehiculos (estacionados, tag, etc.)
+      sin identificacion del propietario.
+    </p>
+    <h2 class="text-2xl font-semibold text-blue-900 mt-10 mb-4">
+      Procedimiento :
+    </h2>
+    <div class="border border-gray-300 rounded-lg p-6 mb-8">
+      <h3 class="text-xl font-semibold mb-4">Multas de transito no anotadas en el Registro Nacional de Multas</h3>
+      <p class="text-gray-700 mb-4">Para este procedimiento debe registrar su Rut y el numero de parte.</p>
+      <form id="formMultas1" class="space-y-4">
+        <div>
+          <label for="rut1" class="block text-left text-gray-700 font-medium mb-1">Rut:</label>
+          <input id="rut1" type="text" placeholder="ej.:1234567-K"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div>
+          <label for="parte" class="block text-left text-gray-700 font-medium mb-1">N Parte:</label>
+          <input id="parte" type="text" placeholder="Ingrese numero de parte"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div class="text-center">
+          <button type="submit"
+            class="bg-blue-800 text-white font-semibold px-8 py-2 rounded-lg hover:bg-blue-700 transition">
+            Consultar
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="border border-gray-300 rounded-lg p-6 mb-8">
+      <h3 class="text-xl font-semibold mb-4">Multas de transito registradas en Juzgado de Policia Local</h3>
+      <p class="text-gray-700 mb-4">Para este procedimiento debe registrar su Rut y el Ano y Numero de la Causa.</p>
+      <form id="formMultas2" class="space-y-4">
+        <div>
+          <label for="rut2" class="block text-left text-gray-700 font-medium mb-1">Rut:</label>
+          <input id="rut2" type="text" placeholder="ej.:1234567-K"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="flex-1">
+            <label for="anio" class="block text-left text-gray-700 font-medium mb-1">Ano:</label>
+            <input id="anio" type="text" placeholder="2025"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+          </div>
+          <span class="mt-6">/</span>
+          <div class="flex-1">
+            <label for="causa" class="block text-left text-gray-700 font-medium mb-1">N Causa:</label>
+            <input id="causa" type="text" placeholder="ej.:A12345"
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+          </div>
+        </div>
+        <div class="text-center">
+          <button type="submit"
+            class="bg-blue-800 text-white font-semibold px-8 py-2 rounded-lg hover:bg-blue-700 transition">
+            Consultar
+          </button>
+        </div>
+      </form>
+    </div>
+    <p id="mensaje" class="text-center text-red-600 font-semibold hidden"></p>
+    <div class="text-sm text-gray-600 mt-6">
+      <p class="font-semibold text-blue-800 mt-4">Sistema de Pago de MULTAS</p>
+      <p>Desarrollado por SMC Spa.</p>
+    </div
+    <div class="text-center mt-8">
+      <button id="btn-volver" class="bg-gray-600 text-white font-semibold px-8 py-2 rounded hover:bg-gray-500">
+        Volver
+      </button>
+    </div>
+  </div>
+</section>
+
+<Footer />
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const forms = [document.getElementById("formMultas1"), document.getElementById("formMultas2")];
+    const mensaje = document.getElementById("mensaje");
+    const volver = document.getElementById("btn-volver");
+    forms.forEach((form) => {
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          if (mensaje) {
+            mensaje.textContent = "Verificando informacion...";
+            mensaje.classList.remove("hidden");
+            mensaje.classList.remove("text-red-600");
+            mensaje.classList.add("text-green-600");
+            setTimeout(() => {
+              mensaje.textContent = "";
+              mensaje.classList.add("hidden");
+            }, 2000);
+          }
+        });
+      }
+    });
+    if (volver) volver.addEventListener("click", () => window.history.back());
+  });
+</script>
+

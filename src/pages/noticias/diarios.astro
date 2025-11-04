@@ -1,0 +1,50 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Header />
+
+<section class="py-12 px-4 md:px-20 bg-[#1e3a5f] text-white relative">
+  <h1 class="text-3xl md:text-5xl font-bold text-center mb-10">Todas las Noticias del Diario</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    {Array.from({ length: 15 }).map((_, i) => (
+      <div class="overflow-hidden rounded-lg shadow-md bg-white">
+        <img
+          src={`/diarios/diario${i + 1}.jpg`}
+          alt={`Diario ${i + 1}`}
+          class="w-full h-[250px] object-cover transition-transform duration-500 hover:scale-110 cursor-pointer"
+          data-index={i + 1}
+        />
+      </div>
+    ))}
+  </div>
+
+  <div id="imageModal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <img id="modalImage" src="" alt="Imagen ampliada" class="max-h-[90vh] max-w-[90vw] rounded shadow-lg">
+  </div>
+
+  <div class="text-center mt-10">
+    <a href="/" class="bg-white text-[#1e3a5f] px-6 py-2 rounded font-semibold hover:bg-gray-200">Volver al Inicio</a>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const modal = document.getElementById("imageModal");
+      const modalImage = document.getElementById("modalImage") as HTMLImageElement;
+
+      if (!modal || !modalImage) return;
+
+      document.querySelectorAll("img[data-index]").forEach((img) => {
+        img.addEventListener("click", () => {
+          modalImage.src = (img as HTMLImageElement).src;
+          modal.classList.remove("hidden");
+        });
+      });
+
+      modal.addEventListener("click", () => modal.classList.add("hidden"));
+    });
+  </script>
+</section>
+
+<Footer />

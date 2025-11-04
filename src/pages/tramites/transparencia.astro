@@ -1,0 +1,127 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Header />
+
+<section class="py-16 px-4 md:px-20 text-gray-800">
+  <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6 text-center">
+      El principio de Transparencia
+    </h1>
+    <p class="text-gray-700 mb-4">
+      Solicitud de informacion en linea. Los datos de ingreso obligatorio se senalan con (*) , los demas se ingresan voluntariamente.
+    </p>
+    <p class="text-gray-700 mb-8">
+      Si ya tiene una cuenta o esta registrado, puede solicitar informacion iniciando sesion.
+    </p>
+    <form id="formLogin" class="space-y-4 mb-6">
+      <div>
+        <label for="email" class="block text-left font-medium mb-1">Ingrese correo electronico:</label>
+        <input id="email" type="email" placeholder="ejemplo@correo.cl"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+      </div>
+      <div>
+        <label for="clave" class="block text-left font-medium mb-1">Ingrese contrasena:</label>
+        <input id="clave" type="password" placeholder="********"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+      </div>
+      <div class="flex flex-col md:flex-row justify-between items-center text-sm text-blue-700 mt-2">
+        <a href="#" class="hover:underline">Olvide mi contrasena</a>
+        <a href="#" class="hover:underline">Quiero crear una cuenta o registrarme</a>
+      </div>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mt-6">
+        <button type="submit"
+          class="bg-blue-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+          Iniciar Sesion
+        </button>
+        <button type="button"
+          class="bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-600 transition">
+          Solicitar informacion sin crear una cuenta
+        </button>
+      </div>
+    </form>
+    <div class="mt-10">
+      <h2 class="text-xl font-semibold text-blue-900 mb-4">Tipo de persona que realiza la solicitud:</h2>
+      <div class="flex items-center gap-4 mb-4">
+        <label class="flex items-center gap-2">
+          <input type="radio" name="tipoPersona" value="natural" class="text-blue-800" checked />
+          Natural
+        </label>
+        <label class="flex items-center gap-2">
+          <input type="radio" name="tipoPersona" value="juridica" class="text-blue-800" />
+          Juridica
+        </label>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="nombre" class="block text-left font-medium mb-1">Nombre:</label>
+          <input id="nombre" type="text"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div>
+          <label for="apellido1" class="block text-left font-medium mb-1">Primer Apellido:</label>
+          <input id="apellido1" type="text"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div>
+          <label for="apellido2" class="block text-left font-medium mb-1">Segundo Apellido:</label>
+          <input id="apellido2" type="text"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-800 focus:outline-none" />
+        </div>
+        <div class="flex items-center gap-2 mt-2">
+          <input id="sinApellido" type="checkbox" class="text-blue-800" />
+          <label for="sinApellido" class="text-gray-700">No tengo Segundo Apellido</label>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mt-10">
+        <button id="continuar" class="bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700">
+          Continuar
+        </button>
+
+        <button id="volver" class="bg-gray-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-500">
+          Volver
+        </button>
+        <button id="presencial" class="bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-800">
+          Solicitar informacion de forma presencial
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Footer />
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("formLogin");
+    const continuar = document.getElementById("continuar");
+    const volver = document.getElementById("volver");
+    const privacidad = document.getElementById("privacidad");
+    const presencial = document.getElementById("presencial");
+    if (form) {
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("Simulacion: inicio de sesion verificado correctamente.");
+      });
+    }
+    if (continuar)
+      continuar.addEventListener("click", () =>
+        alert("Continuando al siguiente paso de solicitud...")
+      );
+
+    if (privacidad)
+      privacidad.addEventListener("click", () =>
+        window.open("/tramites/politicas", "_blank")
+      );
+    if (volver)
+      volver.addEventListener("click", () => window.history.back());
+
+    if (presencial)
+      presencial.addEventListener("click", () =>
+        alert("Dirijase al edificio municipal para realizar el tramite de forma presencial.")
+      );
+  });
+</script>

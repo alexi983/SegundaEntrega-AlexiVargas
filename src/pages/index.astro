@@ -1,0 +1,76 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Diario from '../components/Diario.astro';
+---
+
+<Header />
+
+<section class="py-10 px-4 md:px-20 text-center">
+  <h1 class="text-3xl md:text-5xl font-bold mb-4">Bienvenidos a la Ilustre Municipalidad de Chonchi</h1>
+  <p class="text-gray-700 md:text-lg">En este sitio encontraras informacion sobre nuestro municipio, noticias, tramites, multimedia, intranet y mas.</p>
+</section>
+<section class="py-10 px-4 md:px-20">
+  <h2 class="text-2xl md:text-4xl font-bold text-center mb-8">Noticias Recientes</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="/noticias/SALUDO.jpg" alt="Noticia 1" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <p class="text-gray-700 text-sm mb-4">SALUDO DIA DE LAS IGLESIAS EVANGELICAS Y PROTESTANTES.</p>
+        <a href="/noticias/noticia1" class="text-blue-600 hover:underline font-semibold">Ver mas</a>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="/noticias/CARABINEROS.jpg" alt="Noticia 2" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <p class="text-gray-700 text-sm mb-4">ALCALDE FERNANDO OYARZUN MACIAS SOSTIENE IMPORTANTE REUNION CON EL PREFECTO DE CARABINEROS DE CHILOE-PALENA.</p>
+        <a href="/noticias/noticia2" class="text-blue-600 hover:underline font-semibold">Ver mas</a>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="/noticias/2-abuelitos.jpg" alt="Noticia 3" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <p class="text-gray-700 text-sm mb-4">Cada Paso Cuenta! CEDIAM Vive la Experiencia Pasos Vitales.</p>
+        <a href="/noticias/noticia3" class="text-blue-600 hover:underline font-semibold">Ver mas</a>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded overflow-hidden">
+      <img src="/noticias/forta.png" alt="Noticia 4" class="w-full h-48 object-cover">
+      <div class="p-4">
+        <p class="text-gray-700 text-sm mb-4">Inicio del Programa de Fortalecimiento de Senderos y Miradores de Chonchi.</p>
+        <a href="/noticias/noticia4" class="text-blue-600 hover:underline font-semibold">Ver mas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Diario />
+
+<section class="py-16 px-4 md:px-20 bg-gray-100 text-center">
+  <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-10">
+    TRAMITES Y SERVICIOS EN LINEA
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <a href="/tramites/formularios" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Formularios
+    </a>
+    <a href="/tramites/permisos" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Permisos de circulacion
+    </a>
+    <a href="/tramites/multas" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Pago de multas
+    </a>
+    <a href="/tramites/patentes" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Patentes comerciales
+    </a>
+    <a href="/tramites/transparencia" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Ley de Transparencia
+    </a>
+    <a href="/tramites/documentos" class="block bg-blue-800 text-white py-6 rounded-lg text-lg font-semibold hover:bg-blue-700 transition">
+      Verificacion de documentos
+    </a>
+  </div>
+</section>
+
+<Footer />

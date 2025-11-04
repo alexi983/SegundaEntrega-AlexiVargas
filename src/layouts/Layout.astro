@@ -1,0 +1,20 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Municipalidad de Chonchi</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+  </head>
+  <body class="flex flex-col min-h-screen font-sans antialiased">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

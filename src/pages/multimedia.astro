@@ -1,0 +1,61 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Header />
+
+<section class="py-10 px-4 md:px-20 text-gray-800">
+  <h1 class="text-3xl md:text-5xl font-bold text-center mb-10">Multimedia</h1>
+
+  <p class="text-center text-gray-700 mb-10">
+    En esta seccion podras encontrar videos informativos y actividades destacadas de la Ilustre Municipalidad de Chonchi.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/0NvGd16gbR8"
+          title="Video 1"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold mb-2">Museo del Acordeon de Chonchi</h3>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/cbkY7ocmSTk"
+          title="Video 2"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold mb-2">Iglesia de Terao</h3>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="aspect-w-16 aspect-h-9">
+        <iframe
+          class="w-full h-64"
+          src="https://www.youtube.com/embed/oJms0DClQRI"
+          title="Video 3"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="p-4 text-center">
+        <h3 class="text-lg font-semibold mb-2">CHONCHI Y SUS ATRACTIVOS TURISTICOS</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<Footer />

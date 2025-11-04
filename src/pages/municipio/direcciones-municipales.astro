@@ -1,0 +1,193 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Header />
+
+<section class="py-10 px-4 md:px-20 text-gray-800">
+  <h1 class="text-3xl md:text-5xl font-bold text-center mb-10">Direcciones Municipales</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/administracion.jpeg" alt="Administracion Municipal" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Administracion Municipal</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="adm">Leer Mas</button>
+        <div id="adm" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            Colaborador directo del alcalde en las tareas de coordinacion y gestion permanente del municipio,
+            y en la elaboracion y seguimiento del plan anual de accion municipal. 
+            Ejerce las atribuciones que senale el reglamento municipal y las que le delegue el alcalde,
+            siempre que esten vinculadas con la naturaleza de su cargo.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/finanzas.jpg" alt="Administracion y Finanzas" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Direccion de Administracion y Finanzas</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="finanzas">Leer Mas</button>
+        <div id="finanzas" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700 mb-3">
+            La Unidad de Administracion y Finanzas tiene como funcion asesorar al alcalde en la administracion del personal de la municipalidad
+            y en la administracion financiera de los bienes municipales, por lo cual sus competencias se extienden a:
+          </p>
+          <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Estudiar, calcular, proponer y regular la percepcion de cualquier tipo de ingresos municipales.</li>
+            <li>Colaborar con la Secretaria Comunal de Planificacion en la elaboracion del Presupuesto Municipal.</li>
+            <li>Visar los decretos que irroguen gastos o generen recursos.</li>
+            <li>Llevar la contabilidad municipal en conformidad con las normas de contabilidad nacional.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/juridica.jpg" alt="Asesoria Juridica" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Asesoria Juridica</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="juridica">Leer Mas</button>
+        <div id="juridica" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            Prestar apoyo en materias legales al municipio y al Concejo. Informar en derecho en todos los asuntos legales 
+            que las distintas direcciones y departamentos municipales plantean, orientandolos respecto de disposiciones legales y reglamentarias. 
+            Tambien mantener actualizados los titulos de los bienes municipales.
+          </p>
+          <p class="text-gray-700 mt-2">
+            A solicitud del alcalde puede iniciar y asumir la defensa en todos aquellos juicios en que la Municipalidad de Chonchi sea parte o tenga interes,
+            comprendiendo tambien la asesoria o defensa de la comunidad cuando sea procedente y el alcalde asi lo determine.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/control.jpg" alt="Control Interno" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Control Interno</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="control">Leer Mas</button>
+        <div id="control" class="hidden text-left mt-4 border-t pt-4">
+          <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Realizar la auditoria operativa interna de la municipalidad con el objeto de fiscalizar la legalidad de su actuacion.</li>
+            <li>Controlar la ejecucion financiera y presupuestaria municipal.</li>
+            <li>Representar al alcalde los actos municipales cuando los estime ilegales.</li>
+          </ul>
+          <p class="text-gray-700 mt-2">Ademas, es encargada de Transparencia Municipal.</p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/dideco.jpg" alt="DIDECO" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Direccion de Desarrollo Comunitario</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="dideco">Leer Mas</button>
+        <div id="dideco" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            Tiene por objetivo propender al mejoramiento de la calidad de vida de la poblacion, especialmente de los sectores mas vulnerables. 
+            Promueve la participacion de la comunidad organizada en las distintas esferas del desarrollo comunal, respondiendo a necesidades 
+            especificas mediante programas y proyectos, fortaleciendo la seguridad ciudadana y promoviendo el deporte y la recreacion.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/didel.jpeg" alt="DIDEL" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Direccion de Desarrollo Economico Local</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="didel">Leer Mas</button>
+        <div id="didel" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            La Direccion de Desarrollo Economico Local comenzo a funcionar el 3 de enero de 2011 y tiene como objetivo contribuir 
+            al mejoramiento de la calidad de vida de los habitantes de la comuna, fomentando la participacion de la comunidad 
+            en programas y proyectos productivos, sociales y turisticos.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/seguridad.jpeg" alt="Seguridad Publica" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Direccion de Seguridad Publica, Transito y Transporte Publico</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="seguridad">Leer Mas</button>
+        <div id="seguridad" class="hidden text-left mt-4 border-t pt-4">
+          <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li>Licencias de conducir</li>
+            <li>Transito y transporte publico</li>
+            <li>Seguridad Publica</li>
+            <li>Permisos de circulacion</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/juzgado.jpg" alt="Juzgado de Policia Local" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Juzgado de Policia Local</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="juzgado">Leer Mas</button>
+        <div id="juzgado" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            El Juzgado de Policia Local tiene la responsabilidad de administrar justicia en las materias que las leyes determinen 
+            bajo su competencia y en el ambito de la comuna. El juez es el superior jerarquico del personal municipal del juzgado 
+            y sus funciones estan establecidas en la Ley Nº 15.231.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/obras.jpeg" alt="Obras Municipales" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Direccion de Obras Municipales</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="obras">Leer Mas</button>
+        <div id="obras" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            La Direccion de Obras Municipales tiene como objetivo procurar el desarrollo urbano de la comuna y velar 
+            por el cumplimiento de las disposiciones legales que regulan las edificaciones en el territorio comunal.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/secplan.jpeg" alt="SECPLAN" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">SECPLAN</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="secplan">Leer Mas</button>
+        <div id="secplan" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            La Secretaria Comunal de Planificacion tiene como principal objetivo asesorar al alcalde y al concejo municipal 
+            en la definicion de politicas y en la elaboracion de estrategias para el desarrollo de la comuna de Chonchi.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="bg-white shadow-md rounded-lg overflow-hidden text-center">
+      <img src="/direcciones/secretaria.jpeg" alt="Secretaria Municipal" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <h2 class="text-xl font-semibold mb-3">Secretaria Municipal</h2>
+        <button class="bg-blue-800 text-white px-4 py-2 rounded hover:bg-blue-700 leer-mas" data-target="secretaria">Leer Mas</button>
+        <div id="secretaria" class="hidden text-left mt-4 border-t pt-4">
+          <p class="text-gray-700">
+            La Secretaria Municipal tiene como objetivo apoyar la gestion administrativa del alcalde, actuar como ministro de fe 
+            de las actuaciones municipales y dirigir las actividades de secretaria administrativa del alcalde y del concejo.
+            Tambien cumple funciones relacionadas con juntas de vecinos y organizaciones comunitarias, ademas de coordinar el aseo 
+            y mantenimiento de las dependencias municipales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".leer-mas").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        if (!targetId) return; 
+        const section = document.getElementById(targetId);
+        if (section) {
+          section.classList.toggle("hidden");
+        }
+      });
+    });
+  });
+</script>
+<Footer />
